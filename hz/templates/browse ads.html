@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block A %}
+
+
+{% include "header.html" %} 
+
+	<!-- header section end -->
+	<!-- section PROMOTED start -->
+	<div class=" layout_padding promoted_sectipon">
+		<div class="container">
+			<h1 class="promoted_text">PROMOTED <span style="border-bottom: 5px solid #4bc714;">ADS</span></h1>
+			<div class="images_main">
+				<div class="row">
+					
+				</div>
+			</div>
+			{% for i in photos %}
+
+			<div class="images_main">
+				<div class="row">
+					<div class="col-sm-6 col-md-6 col-lg-3">
+						<div><img src="{{i.img.url}}" style="width: 100%;"></div>
+						<button class="promoted_bt">{{i.title}}</button>
+						<div class="eye-icon"><img src="{% static 'images/eye-icon.png' %}"><span class="like-icon"><img src="{% static 'images/like-icon.png' %}"></span></div>
+						<div class="numbar_text">{{i.views}}<span class="like-icon">{{i.like}}</span></div>
+						<button class="mobile_bt"><a href="#">{{i.what}}</a></button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- section PROMOTED end -->
+	<!-- footer section start -->
+	{% endfor %}
+	
+
+
+       
+{% endblock %}
